@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "title": "Stop leaving shells in nature",
+    "subtitle": "Keep your hunt clean and organized"
+  },
+  "product": {
+    "name": "Pouch",
+    "price": "€24,90",
+    "cta": "Add pouch to cart"
+  },
+  "bullets": [
+    "No more shells in your pockets",
+    "Place them without breaking focus",
+    "Leave nothing behind"
+  ],
+  "kit": {
+    "title": "Complete your kit",
+    "item": "Sunnglass retainers",
+    "price": "€8,90",
+    "cta": "Add to order"
+  },
+  "trust": [
+    "Fast EU shipping",
+    "Built for hunters",
+    "Simple returns"
+  ],
+  "sticky": {
+    "cta": "Add pouch to cart"
+  }
+}
