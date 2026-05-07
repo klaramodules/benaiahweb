@@ -15,7 +15,7 @@
   ],
   "kit": {
     "title": "Complete your kit",
-    "item": "Sunnglass retainers",
+    "item": "Sunglass retainers",
     "price": "€8,90",
     "cta": "Add to order"
   },
@@ -24,6 +24,50 @@
     "Built for hunters",
     "Simple returns"
   ],
+  "privacy": {
+    "title": "Privacy",
+    "text": [
+      "We respect your privacy and only collect information necessary to process your order.",
+      "Your data will never be sold or shared with third parties for marketing purposes.",
+      "We use secure payment providers to ensure your information is protected.",
+      "By using this site, you agree to our data practices."
+    ]
+  },
+  "returns": {
+    "title": "Returns",
+    "text": [
+      "We offer a 30-day return policy.",
+      "Items must be unused and in original condition to be eligible for a return.",
+      "To start a return, contact us and we’ll guide you through the process.",
+      "Return shipping costs are the responsibility of the customer unless the item is defective."
+    ]
+  },
+  "shipping": {
+    "title": "Shipping",
+    "text": [
+      "We ship to the US, Canada, and EU.",
+      "Orders are processed within 1–3 business days.",
+      "Delivery times typically range between 5–10 business days.",
+      "Shipping costs are calculated at checkout.",
+      "You will receive a tracking link once your order has been shipped."
+    ]
+  },
+  "header": {
+  "brand": "BENAIAH",
+  "menu": "Menu",
+  "close": "Close",
+  "home": "Shop",
+  "shipping": "Shipping",
+  "returns": "Returns",
+  "privacy": "Privacy"
+},
+  "footer": {
+  "home": "Shop",
+  "shipping": "Shipping",
+  "returns": "Returns",
+  "privacy": "Privacy",
+  "brand": "Benaiah"
+},
   "sticky": {
     "cta": "Add pouch to cart"
   }

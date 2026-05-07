@@ -1,4 +1,5 @@
 import Link from "next/link";
+import content from "../dictionaries/en.json";
 
 export default function Footer() {
   return (
@@ -7,13 +8,14 @@ export default function Footer() {
       <div className="max-w-xl mx-auto flex flex-col gap-6">
 
         <div className="flex gap-6">
-          <Link href="/shipping">Shipping</Link>
-          <Link href="/returns">Returns</Link>
-          <Link href="/privacy">Privacy</Link>
+          <Link href="/">{content.footer.home}</Link>
+          <Link href="/shipping">{content.footer.shipping}</Link>
+          <Link href="/returns">{content.footer.returns}</Link>
+          <Link href="/privacy">{content.footer.privacy}</Link>
         </div>
 
         <div className="text-xs text-[#666]">
-          © {new Date().getFullYear()} Benaiah
+          © {new Date().getFullYear()} {content.footer.brand}
         </div>
 
       </div>

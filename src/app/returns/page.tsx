@@ -1,26 +1,44 @@
+import { getDictionary } from "@/lib/dictionary";
+
+const content = getDictionary("en"); // testa "de"
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+
 export default function Returns() {
   return (
-    <main className="min-h-screen bg-[#0A0A0A] text-white px-6 py-24 max-w-xl mx-auto">
+    <main className="min-h-screen flex flex-col bg-[#0A0A0A] text-white pb-32">
 
-      <h1 className="text-2xl mb-6">Returns</h1>
+      <Header />
 
-      <div className="space-y-4 text-[#A1A1A1]">
+      <section className="flex-1 px-6 pt-24 pb-12 max-w-xl mx-auto w-full">
 
-        <p>
-          We offer a 30-day return policy.
-        </p>
+        <div className="h-[1px] w-12 bg-[#C47A2C] mb-6"></div>
 
-        <p>
-          Items must be unused and in original condition to be eligible for a return.
-        </p>
+        <h1 className="text-2xl mb-6">
+          {content.returns.title}
+        </h1>
 
-        <p>
-          To start a return, contact us and we’ll guide you through the process.
-        </p>
+        <div className="space-y-4 text-[#A1A1A1]">
+          {content.returns.text.map((item, i) => (
+            <p key={i}>{item}</p>
+          ))}
+        </div>
 
-        <p>
-          Return shipping costs are the responsibility of the customer unless the item is defective.
-        </p>
+      </section>
+
+      <Footer />
+
+      {/* STICKY BUY BAR */}
+      <div className="fixed bottom-0 left-0 w-full bg-[#0A0A0A] border-t border-[#1A1A1A] p-4 flex items-center justify-between">
+
+        <div>
+          <p className="text-sm">{content.product.name}</p>
+          <p className="text-sm text-[#A1A1A1]">{content.product.price}</p>
+        </div>
+
+        <button className="bg-[#C47A2C] text-black px-6 py-3 rounded-full font-medium">
+          {content.sticky.cta}
+        </button>
 
       </div>
 

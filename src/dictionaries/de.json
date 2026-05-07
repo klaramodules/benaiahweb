@@ -1,0 +1,73 @@
+{
+  "hero": {
+    "title": "Hör auf, Hülsen in der Natur zu hinterlassen",
+    "subtitle": "Halte deine Jagd sauber und organisiert"
+  },
+  "product": {
+    "name": "Tasche",
+    "price": "€24,90",
+    "cta": "Tasche in den Warenkorb"
+  },
+  "bullets": [
+    "Keine Hülsen mehr in den Taschen",
+    "Ablegen ohne den Fokus zu verlieren",
+    "Hinterlasse nichts in der Natur"
+  ],
+  "kit": {
+    "title": "Vervollständige dein Set",
+    "item": "Brillenhalter",
+    "price": "€8,90",
+    "cta": "Zur Bestellung hinzufügen"
+  },
+  "trust": [
+    "Schneller EU-Versand",
+    "Für Jäger entwickelt",
+    "Einfache Rückgabe"
+  ],
+  "privacy": {
+    "title": "Datenschutz",
+    "text": [
+      "Wir respektieren deine Privatsphäre und erfassen nur Daten, die zur Bearbeitung deiner Bestellung notwendig sind.",
+      "Deine Daten werden niemals zu Marketingzwecken verkauft oder weitergegeben.",
+      "Wir nutzen sichere Zahlungsanbieter, um deine Daten zu schützen.",
+      "Durch die Nutzung dieser Seite stimmst du unseren Datenschutzpraktiken zu."
+    ]
+  },
+  "returns": {
+    "title": "Rückgabe",
+    "text": [
+      "Wir bieten ein 30-tägiges Rückgaberecht.",
+      "Artikel müssen unbenutzt und im Originalzustand sein, um zurückgegeben werden zu können.",
+      "Kontaktiere uns, um eine Rückgabe zu starten – wir helfen dir dabei.",
+      "Die Rücksendekosten trägt der Kunde, es sei denn, der Artikel ist defekt."
+    ]
+  },
+  "shipping": {
+    "title": "Versand",
+    "text": [
+      "Wir liefern in die USA, nach Kanada und innerhalb der EU.",
+      "Bestellungen werden innerhalb von 1–3 Werktagen bearbeitet.",
+      "Die Lieferzeit beträgt in der Regel 5–10 Werktage.",
+      "Die Versandkosten werden beim Checkout berechnet.",
+      "Du erhältst einen Tracking-Link, sobald deine Bestellung versendet wurde."
+    ]
+  },
+  "header": {
+    "brand": "BENAIAH",
+    "menu": "Menü",
+    "close": "Schließen",
+    "home": "Shop",
+    "shipping": "Versand",
+    "returns": "Rückgabe"
+  },
+  "footer": {
+    "home": "Shop",
+    "shipping": "Versand",
+    "returns": "Rückgabe",
+    "privacy": "Datenschutz",
+    "brand": "Benaiah"
+  },
+  "sticky": {
+    "cta": "In den Warenkorb"
+  }
+}

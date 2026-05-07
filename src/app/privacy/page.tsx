@@ -1,35 +1,44 @@
+import content from "../../dictionaries/en.json";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
 export default function Privacy() {
   return (
-    <main className="min-h-screen bg-[#0A0A0A] text-white px-6 py-24 max-w-xl mx-auto">
+    <main className="min-h-screen flex flex-col bg-[#0A0A0A] text-white pb-32">
 
       <Header />
 
-      <h1 className="text-2xl mb-6">Privacy</h1>
+      <section className="flex-1 px-6 pt-24 pb-12 max-w-xl mx-auto w-full">
 
-      <div className="space-y-4 text-[#A1A1A1]">
+        <div className="h-[1px] w-12 bg-[#C47A2C] mb-6"></div>
 
-        <p>
-          We respect your privacy and only collect information necessary to process your order.
-        </p>
+        <h1 className="text-2xl mb-6">
+          {content.privacy.title}
+        </h1>
 
-        <p>
-          Your data will never be sold or shared with third parties for marketing purposes.
-        </p>
+        <div className="space-y-4 text-[#A1A1A1]">
+          {content.privacy.text.map((item, i) => (
+            <p key={i}>{item}</p>
+          ))}
+        </div>
 
-        <p>
-          We use secure payment providers to ensure your information is protected.
-        </p>
-
-        <p>
-          By using this site, you agree to our data practices.
-        </p>
-
-      </div>
+      </section>
 
       <Footer />
+
+      {/* STICKY BUY BAR */}
+      <div className="fixed bottom-0 left-0 w-full bg-[#0A0A0A] border-t border-[#1A1A1A] p-4 flex items-center justify-between">
+
+        <div>
+          <p className="text-sm">{content.product.name}</p>
+          <p className="text-sm text-[#A1A1A1]">{content.product.price}</p>
+        </div>
+
+        <button className="bg-[#C47A2C] text-black px-6 py-3 rounded-full font-medium">
+          {content.sticky.cta}
+        </button>
+
+      </div>
 
     </main>
   );
