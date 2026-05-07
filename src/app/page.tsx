@@ -1,15 +1,21 @@
+"use client";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import content from "../dictionaries/en.json";
+import { useCart } from "./context/CartContext";
+import CartDrawer from "../components/CartDrawer";
 
 export default function Home() {
+  const { addToCart } = useCart();
+
   return (
     <main className="min-h-screen bg-[#0A0A0A] text-white pb-24">
 
       <Header />
-
+      <CartDrawer />
       {/* HERO */}
-      <section className="px-6 pt-24 pb-12 max-w-xl mx-auto">
+      <section className="px-6 pt-32 pb-12 max-w-xl mx-auto">
         <div className="h-[1px] w-12 bg-[#C47A2C] mb-6"></div>
 
         <h1 className="text-4xl font-semibold leading-tight mb-6 tracking-tight">
@@ -37,7 +43,17 @@ export default function Home() {
           <p className="text-lg">{content.product.price}</p>
         </div>
 
-        <button className="w-full bg-[#C47A2C] text-black py-4 rounded-full font-medium">
+        <button
+  onClick={() =>
+    addToCart({
+      id: "pouch",
+      name: "Pouch",
+      price: 24.9,
+      quantity: 1,
+    })
+  }
+  className="w-full bg-[#C47A2C] text-black py-4 rounded-full font-medium"
+>
           {content.product.cta}
         </button>
 
@@ -60,13 +76,29 @@ export default function Home() {
         <div className="border-t border-[#1A1A1A] pt-12">
 
           <h2 className="text-lg mb-6">{content.kit.title}</h2>
-
+<div className="w-full mb-8">
+  <img
+    src="/retainer_1.jpg"
+    alt="Retainers"
+    className="rounded-xl w-full h-72 object-cover object-center opacity-95"
+  />
+</div>
           <div className="flex items-center justify-between mb-4">
             <p className="text-[#A1A1A1]">{content.kit.item}</p>
             <p>{content.kit.price}</p>
           </div>
 
-          <button className="w-full border border-[#1A1A1A] py-3 rounded-full text-[#A1A1A1] hover:border-[#C47A2C] hover:text-white transition">
+          <button
+  onClick={() =>
+    addToCart({
+      id: "retainers",
+      name: "Sunglass retainers",
+      price: 8.9,
+      quantity: 1,
+    })
+  }
+  className="w-full border border-[#1A1A1A] py-3 rounded-full text-[#A1A1A1] hover:border-[#C47A2C] hover:text-white transition"
+>
             {content.kit.cta}
           </button>
 
@@ -92,7 +124,17 @@ export default function Home() {
           <p className="text-sm text-[#A1A1A1]">{content.product.price}</p>
         </div>
 
-        <button className="bg-[#C47A2C] text-black px-6 py-3 rounded-full font-medium">
+        <button
+  onClick={() =>
+    addToCart({
+      id: "pouch",
+      name: "Pouch",
+      price: 24.9,
+      quantity: 1,
+    })
+  }
+  className="bg-[#C47A2C] text-black px-6 py-3 rounded-full font-medium"
+>
           {content.sticky.cta}
         </button>
 
