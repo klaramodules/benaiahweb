@@ -4,9 +4,9 @@
     "subtitle": "Built for hunters who leave nothing behind"
   },
   "product": {
-    "name": "Pouch",
+    "name": "Benaiah shell pouch",
     "price": "€24,90",
-    "cta": "Add pouch to cart"
+    "cta": "Add to cart"
   },
   "bullets": [
     "No more shells in your pockets",
@@ -15,14 +15,14 @@
   ],
   "kit": {
     "title": "Complete your kit",
-    "item": "Sunglass retainers",
+    "item": "Benaiah hunting retainers",
     "price": "€8,90",
-    "cta": "Add to order"
+    "cta": "Add to cart"
   },
   "trust": [
     "Fast EU shipping",
-    "Built for hunters",
-    "Simple returns"
+     "Simple returns",
+    "Benaiah - Relaiable equipment built for hunters"   
   ],
   "privacy": {
     "title": "Privacy",
@@ -69,6 +69,6 @@
   "brand": "Benaiah"
 },
   "sticky": {
-    "cta": "Add pouch to cart"
+    "cta": "Add shell pouch to cart"
   }
 }

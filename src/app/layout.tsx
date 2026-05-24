@@ -1,5 +1,6 @@
 import "./globals.css";
 import { CartProvider } from "./context/CartContext";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function RootLayout({
   children,
@@ -12,6 +13,8 @@ export default function RootLayout({
         <CartProvider>
           {children}
         </CartProvider>
+
+        <Analytics />
       </body>
     </html>
   );

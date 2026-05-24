@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import content from "../dictionaries/en.json";
 import { useCart } from "../app/context/CartContext";
 import { ShoppingCart } from "lucide-react";
@@ -19,14 +20,21 @@ export default function Header() {
   return (
     <>
       {/* HEADER */}
-      <header className="fixed top-0 left-0 w-full z-50 px-6 py-5 flex items-center justify-between bg-[#0A0A0A]/85 backdrop-blur-md">
+      <header className="fixed top-0 left-0 w-full z-50 px-6 py-4 flex items-center justify-between bg-[#0A0A0A]/85 backdrop-blur-md">
 
         {/* LOGO */}
         <Link
           href="/"
-          className="text-base tracking-[0.25em] text-white font-medium"
+          className="flex items-center h-12"
         >
-          {content.header.brand}
+          <Image
+            src="/logo4.png"
+            alt="BENAIAH"
+            width={220}
+            height={48}
+            priority
+            className="h-full w-auto object-contain"
+          />
         </Link>
 
         {/* RIGHT SIDE */}
@@ -92,9 +100,13 @@ export default function Header() {
         {/* TOP */}
         <div className="flex justify-between items-center mb-10">
 
-          <span className="text-base tracking-[0.2em] font-medium">
-            {content.header.brand}
-          </span>
+          <Image
+            src="/logo4.png"
+            alt="BENAIAH"
+            width={160}
+            height={36}
+            className="h-9 w-auto object-contain"
+          />
 
           <button
             onClick={() => setOpen(false)}
