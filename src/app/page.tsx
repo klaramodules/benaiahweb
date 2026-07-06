@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import content from "../dictionaries/en.json";
@@ -8,8 +9,10 @@ import CartDrawer from "../components/CartDrawer";
 
 export default function Home() {
   const { addToCart } = useCart();
+  const [bundle, setBundle] = useState(true);
 
   return (
+
     <main className="relative min-h-screen bg-[#0A0A0A] text-white pb-24 overflow-hidden">
 
       {/* GRAIN OVERLAY */}
@@ -18,8 +21,20 @@ export default function Home() {
       <Header />
       <CartDrawer />
 
+      {/* LAUNCH BANNER */}
+      <section className="relative z-10 bg-[#111111] border-y border-[#1A1A1A]">
+        <div className="max-w-xl mx-auto px-6 py-3 text-center">
+          <p className="text-sm text-[#E5E5E5]">
+            <span className="font-medium">Official launch coming soon.</span>{" "}
+            <span className="text-[#A1A1A1]">
+              We're putting the final touches on the store before opening.
+            </span>
+          </p>
+        </div>
+      </section>
+
       {/* HERO */}
-      <section className="px-6 pt-32 pb-12 max-w-xl mx-auto relative z-10">
+      <section className="px-6 pt-48 pb-12 max-w-xl mx-auto relative z-10">
         <div className="h-[1px] w-12 bg-[#C47A2C] mb-6"></div>
 
         <h1 className="text-4xl font-semibold leading-tight mb-6 tracking-tight">
@@ -32,36 +47,129 @@ export default function Home() {
       </section>
 
       {/* PRODUCT */}
-      <section className="px-6 pb-16 max-w-xl mx-auto relative z-10">
+<section className="px-6 pb-16 max-w-xl mx-auto relative z-10">
 
-        <div className="w-full mb-8 overflow-hidden rounded-xl">
-          <img
-            src="/pouch_1.jpg"
-            alt="Benaiah pouch"
-            className="rounded-xl w-full object-cover animate-float"
-          />
-        </div>
+  <div className="w-full mb-8 overflow-hidden rounded-xl">
+    <img
+      src="/pouch_3.png"
+      alt="Benaiah pouch"
+      className="rounded-xl w-full object-cover animate-float"
+    />
+  </div>
 
-        <div className="flex items-center justify-between mb-6">
-          <p className="text-lg font-medium">{content.product.name}</p>
-          <p className="text-lg">{content.product.price}</p>
-        </div>
+  <h2 className="text-xl font-medium mb-2">
+    {content.product.name}
+  </h2>
 
-        <button
-          onClick={() =>
-            addToCart({
-              id: "pouch",
-              name: "Benaiah shell pouch",
-              price: 24.9,
-              quantity: 1,
-            })
-          }
-          className="w-full bg-[#C47A2C] text-black py-4 rounded-full font-medium"
+  <div className="border border-[#1A1A1A] rounded-2xl overflow-hidden mb-6">
+
+    {/* POUCH */}
+    <button
+      onClick={() => setBundle(false)}
+      className={`w-full flex items-center justify-between px-5 py-5 transition ${
+        !bundle ? "bg-[#141414]" : ""
+      }`}
+    >
+      <div className="flex items-center gap-4">
+
+        <div
+          className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
+            !bundle
+              ? "border-[#C47A2C]"
+              : "border-[#555]"
+          }`}
         >
-          {content.product.cta}
-        </button>
+          {!bundle && (
+            <div className="w-2.5 h-2.5 rounded-full bg-[#C47A2C]" />
+          )}
+        </div>
 
-      </section>
+        <div className="text-left">
+          <p>Shell Pouch</p>
+          <p className="text-sm text-[#A1A1A1]">
+            Pouch only
+          </p>
+        </div>
+
+      </div>
+
+      <p>€24.90</p>
+
+    </button>
+
+    <div className="h-px bg-[#1A1A1A]" />
+
+    {/* BUNDLE */}
+    <button
+      onClick={() => setBundle(true)}
+      className={`w-full flex items-center justify-between px-5 py-5 transition ${
+        bundle ? "bg-[#141414]" : ""
+      }`}
+    >
+      <div className="flex items-center gap-4">
+
+        <div
+          className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
+            bundle
+              ? "border-[#C47A2C]"
+              : "border-[#555]"
+          }`}
+        >
+          {bundle && (
+            <div className="w-2.5 h-2.5 rounded-full bg-[#C47A2C]" />
+          )}
+        </div>
+
+        <div className="text-left">
+
+          <div className="flex items-center gap-2">
+            <p>Pouch + Hunting Belt</p>
+
+            <span className="text-xs bg-[#C47A2C] text-black px-2 py-0.5 rounded-full font-medium">
+              Recommended
+            </span>
+          </div>
+
+          <p className="text-sm text-[#A1A1A1]">
+            Save €1.90
+          </p>
+
+        </div>
+
+      </div>
+
+      <p>€34.90</p>
+
+    </button>
+
+  </div>
+
+  <button
+    onClick={() => {
+
+      addToCart({
+        id: "pouch",
+        name: "Benaiah shell pouch",
+        price: 24.9,
+        quantity: 1,
+      });
+
+      if (bundle) {
+        addToCart({
+          id: "belt",
+          name: "Benaiah hunting belt",
+          price: 10,
+          quantity: 1,
+        });
+      }
+
+    }}
+    className="w-full bg-[#C47A2C] text-black py-4 rounded-full font-medium"
+  >
+    {bundle ? "Add Bundle to cart" : "Add Shell Pouch to cart"}
+  </button>
+
+</section>
 
       {/* BULLETS */}
       <section className="px-6 pb-16 max-w-xl mx-auto relative z-10">
@@ -75,41 +183,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* KIT */}
-      <section className="px-6 pb-16 max-w-xl mx-auto relative z-10">
-        <div className="border-t border-[#1A1A1A] pt-12">
+      {/* RETAINERS */}
+<section className="px-6 pb-16 max-w-xl mx-auto relative z-10">
+  <div className="border-t border-[#1A1A1A] pt-12">
 
-          <h2 className="text-lg mb-6">{content.kit.title}</h2>
+    <div className="w-full mb-8 overflow-hidden rounded-xl">
+      <img
+        src="/retainer_1.jpg"
+        alt="Benaiah Hunting Retainers"
+        className="rounded-xl w-full h-72 object-cover object-center animate-float"
+      />
+    </div>
 
-          <div className="w-full mb-8 overflow-hidden rounded-xl">
-            <img
-              src="/retainer_1.jpg"
-              alt="Retainers"
-              className="rounded-xl w-full h-72 object-cover object-center opacity-95 animate-float"
-            />
-          </div>
+    <h2 className="text-xl font-medium mb-2">
+      Benaiah Hunting Retainers
+    </h2>
 
-          <div className="flex items-center justify-between mb-4">
-            <p className="text-[#A1A1A1]">{content.kit.item}</p>
-            <p>{content.kit.price}</p>
-          </div>
+    <div className="border border-[#1A1A1A] rounded-2xl p-5 mb-6">
 
-          <button
-            onClick={() =>
-              addToCart({
-                id: "retainers",
-                name: "Benaiah hunting retainers",
-                price: 8.9,
-                quantity: 1,
-              })
-            }
-            className="w-full border border-[#1A1A1A] py-3 rounded-full text-[#A1A1A1] hover:border-[#C47A2C] hover:text-white transition"
-          >
-            {content.kit.cta}
-          </button>
+      <div className="flex items-center justify-between">
+        <p className="font-medium">
+          Eyewear Retainers
+        </p>
 
-        </div>
-      </section>
+        <p className="text-lg">
+          €5.90
+        </p>
+      </div>
+
+    </div>
+
+    <button
+      onClick={() =>
+        addToCart({
+          id: "retainers",
+          name: "Benaiah Hunting Retainers",
+          price: 5.9,
+          quantity: 1,
+        })
+      }
+      className="w-full bg-[#C47A2C] text-black py-4 rounded-full font-medium hover:opacity-90 transition"
+    >
+      Add Retainers to Cart
+    </button>
+
+  </div>
+</section>
 
       {/* TRUST */}
       <section className="px-6 pb-24 max-w-xl mx-auto relative z-10">
@@ -146,43 +265,7 @@ export default function Home() {
 
       </div>
 
-      {/* EFFECTS */}
-      <style jsx>{`
-        .animate-float {
-          animation: floatImage 8s ease-in-out infinite alternate;
-          will-change: transform;
-        }
-
-        @keyframes floatImage {
-          from {
-            transform: scale(1) translateY(0px);
-          }
-
-          to {
-            transform: scale(1.06) translateY(-8px);
-          }
-        }
-
-        .grain {
-          position: fixed;
-          inset: 0;
-
-          background-image:
-            repeating-radial-gradient(
-              circle at 0 0,
-              rgba(255,255,255,0.035),
-              transparent 2px
-            );
-
-          opacity: 0.12;
-
-          mix-blend-mode: soft-light;
-
-          pointer-events: none;
-
-          z-index: 1;
-        }
-      `}</style>
+      
 
     </main>
   );

@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <>
       {/* HEADER */}
-      <header className="fixed top-0 left-0 w-full z-50 px-6 py-4 flex items-center justify-between bg-[#0A0A0A]/85 backdrop-blur-md">
+      <header className="fixed top-0 left-0 w-full z-50 px-6 py-4 flex items-center justify-between bg-[#0A0A0A]">
 
         {/* LOGO */}
         <Link
@@ -81,7 +81,20 @@ export default function Header() {
         </div>
 
       </header>
-
+{/* LAUNCH BANNER */}
+<div className="fixed top-[80px] left-0 w-full z-40 bg-[#0A0A0A] border-y border-[#1A1A1A]">
+  <div className="max-w-xl mx-auto px-6 py-4 text-center">
+    <p className="text-base leading-relaxed">
+      <span className="font-medium text-white">
+        Official launch coming soon.
+      </span>
+      <br />
+      <span className="text-[#A1A1A1]">
+        We're putting the final touches on the store before opening.
+      </span>
+    </p>
+  </div>
+</div>
       {/* BACKDROP */}
       <div
         onClick={() => setOpen(false)}
