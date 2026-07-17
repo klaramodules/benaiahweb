@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ProductGallery from "../components/ProductGallery";
 import content from "../dictionaries/en.json";
 import { useCart } from "./context/CartContext";
 import CartDrawer from "../components/CartDrawer";
@@ -49,13 +51,7 @@ export default function Home() {
       {/* PRODUCT */}
 <section className="px-6 pb-16 max-w-xl mx-auto relative z-10">
 
-  <div className="w-full mb-8 overflow-hidden rounded-xl">
-    <img
-      src="/pouch_3.png"
-      alt="Benaiah pouch"
-      className="rounded-xl w-full object-cover animate-float"
-    />
-  </div>
+  <ProductGallery />
 
   <h2 className="text-xl font-medium mb-2">
     {content.product.name}
